@@ -58,6 +58,7 @@ nav {
 /* position: relative; */
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   padding: 1rem;
   min-height: 10vh;
   width: 90%;
@@ -161,6 +162,7 @@ nav h1 span:hover{
   width: 85%;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   min-height: 90vh;
 }
@@ -168,17 +170,18 @@ nav h1 span:hover{
 .homepage-left {
     flex: 2 1 40rem;
     /* background: cornflowerblue; */
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 3rem;
+    margin-right: 5rem;
 }
 .moveable-div{
     
 }
 .homepage-right {
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -195,6 +198,7 @@ nav h1 span:hover{
 }
 .homepage-left h2{
     font-size: 6rem;
+    font-size: calc(4.2rem + 1vw);
     padding: 0.5rem 0;
     transform-origin: left;
     transform: scaleX(0);
@@ -206,6 +210,7 @@ nav h1 span:hover{
 
     padding: 0.5rem 0;
     font-size: 3rem;
+    font-size: calc(1.8rem + 1vw);
     transform-origin: left;
     transform: scaleX(0);
     animation: revealTextReverse 1s ease-in-out forwards 2.2s;
@@ -245,6 +250,7 @@ nav h1 span:hover{
 .homepage-left p{
     padding: 0.5rem 0;
     font-size: 1.5rem;
+    font-size: calc(1rem + 0.5vw);
     opacity: 0;
     animation: fadeIn 1s linear forwards 4s;
 }
@@ -490,13 +496,10 @@ nav ul li a:hover{
 
 /* footer */
 
-footer{
-    height: 10vh;
-    background: black;
-}
 
 
 footer {
+min-height: 10vh;
   color: white;
   background: #222;
   /* background: rgba(19, 28, 39, 1); */
@@ -526,18 +529,7 @@ footer img{
     background: white;
 }
 
-
-
-/* .  position: absolute;
-    background: #f63854;
-    height: 5rem;
-    width: 5rem;
-    top: 2%;
-    right: 0%;
-    z-index: 999;
-}div-cross-btn{ */
-  
-
+/* search button */
 .fa-window-close{
     color: white;
 }
@@ -635,3 +627,69 @@ footer img{
     color: #f63854;
   }
 
+/* media queries */
+
+@media screen and (max-width: 1119px) {
+    nav h1{
+        padding-bottom: 1.5rem;
+        text-align: center;
+    }
+    .homepage{
+        width: 90%;
+        margin-right: 0rem;
+        min-height: 50vh;
+    }
+    .homepage-left{
+        /* text-align: center; */
+        margin-right: 0rem;
+        min-height: 50vh;
+    }
+    .homepage-left div:nth-child(1){
+        width: 100%;
+        position: relative;
+    }
+    .homepage-left div:nth-child(2){
+        width: 100%;
+        position: relative;
+    }
+    .homepage-left a{
+        margin: 2rem auto;
+        margin-top: 5rem ;
+    }
+    .homepage-left h2{
+        font-size: calc(3.5rem + 1vw);
+    }
+    .homepage-left h3{
+        font-size: calc(1.5rem + 1vw);
+    }
+    .homepage-right {
+        display: none;
+    }
+    footer h5{
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    footer ul{
+        /* margin-bottom: 1rem; */
+    }
+  }
+  
+  @media screen and (max-width: 700px){
+    .homepage{
+        width: 95%;
+        margin-right: 0rem;
+    }
+  @media screen and (max-width: 475px){
+    .service div{
+        width: 90%;
+    }
+    .service-heading{
+        font-size: 2.2rem;
+        width: 15rem;
+    }
+    .service div img{
+        height: 20%;
+        width: 35%;
+    }
+    }
+  }
